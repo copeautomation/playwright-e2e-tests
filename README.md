@@ -2,18 +2,14 @@
 
 ## In this session...
 
-**Setup Git Repo**
-1. Git commands
-   - `git init`
-   - `git status`
-   - `git add .`
-   - `git commit -m "<commit-message>"`
+**Writing First Test**
+1. Spec/test file not having `.spec or .test` init
+2. Navigation timeout error
 
-2. git ignore the following files
-    - /debug
-    - logs/
-    - .env
-    - allure-results
-    - tests-examples/
-    - example.*
-    - *.log
+```ts
+use: {
+    navigationTimeout: 30_000,  // Set timeout to 30 seconds
+},
+```
+3. Missing `await` keyword before action methods
+4. Done !🎉
