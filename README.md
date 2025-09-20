@@ -2,7 +2,7 @@
 
 ## In this session...
 
-**Writing First Test**
+**Common Errors**
 1. Spec/test file not having `.spec or .test` init
 2. Navigation timeout error
 
