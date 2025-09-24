@@ -1,20 +1,21 @@
 {
-  "name": "playwright-e2e-tests",
-  "version": "1.0.0",
-  "description": "Playwright E2E Tests with AI Capabilities incl MCP",
-  "main": "index.js",
-  "scripts": {
-    "demo": "npx playwright test tests/demo/mytest.spec.ts --headed"
-  },
-  "keywords": [
-    "playwright",
-    "playwright-e2e-tests",
-    "playwright-mcp"
-  ],
-  "author": "Cope Automation",
-  "license": "ISC",
-  "devDependencies": {
-    "@playwright/test": "^1.55.0",
-    "@types/node": "^24.5.0"
-  }
+    "name": "playwright-e2e-tests",
+    "version": "1.0.0",
+    "description": "Playwright E2E Tests with AI Capabilities incl MCP",
+    "main": "index.js",
+    "scripts": {
+        "login": "npx playwright test tests/functional/login.spec.ts --headed",
+        "demo": "npx playwright test tests/demo/mytest.spec.ts --headed"
+    },
+    "keywords": [
+        "playwright",
+        "playwright-e2e-tests",
+        "playwright-mcp"
+    ],
+    "author": "Cope Automation",
+    "license": "ISC",
+    "devDependencies": {
+        "@playwright/test": "^1.55.0",
+        "@types/node": "^24.5.0"
+    }
 }
