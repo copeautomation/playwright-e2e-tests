@@ -4,6 +4,7 @@
     "description": "Playwright E2E Tests with AI Capabilities incl MCP",
     "main": "index.js",
     "scripts": {
+        "ele-int": "npx playwright test tests/demo/ele.handling.make.aptmnt.spec.ts --headed",
         "make-apt": "npx playwright test tests/functional/make.aptmnt.spec.ts --headed",
         "login": "npx playwright test tests/functional/login.spec.ts --headed",
         "demo": "npx playwright test tests/demo/mytest.spec.ts --headed"
