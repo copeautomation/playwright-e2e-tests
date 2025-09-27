@@ -35,6 +35,10 @@ test("Should demo locators", async ({ page }) => {
 });
 
 
-test.only("Should demo config file", async ({ page }, testInfo) => {
+test("Should demo config file", async ({ page }, testInfo) => {
     console.log(`>> Config at run-time: ${JSON.stringify(testInfo.config)}`);
+});
+
+test.only("Should demo fixtures", async ({ request }, testInfo) => {
+    // console.log(`>> The test runs on ${browserName}`);
 });
