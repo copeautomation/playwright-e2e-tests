@@ -2,10 +2,31 @@
 
 ## In this session...
 
-**Iterating Over List Of Elements - Capture the Flow**
-- codegen CLI: `npx playwright codegen https://www.saucedemo.com/`
+**Allure Advanced Setup**
+For more detailed reporting, you can configure additional options:
 
-**Scenario:**
-1. Login as standard user
-2. Get a list of products with its price
-3. Assert that all products have non-zero dollar value
+```ts
+reporter: [
+  [
+    'html',
+    {
+      open: 'never', // Don't auto-open HTML report
+    },
+  ],
+  [
+    'allure-playwright',
+    {
+      detail: true,
+      suiteTitle: true,
+      environmentInfo: {
+        name: 'TEST',
+        appName: "CURA",
+        Release: 'Release 1.1',
+        node_version: process.version
+      },
+    },
+  ],
+],
+```
+---
+
