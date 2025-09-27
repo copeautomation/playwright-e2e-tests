@@ -4,6 +4,10 @@
     "description": "Playwright E2E Tests with AI Capabilities incl MCP",
     "main": "index.js",
     "scripts": {
+        "debug:trace": "npx playwright test tests/demo/debug.make.aptmnt.spec.ts --trace on",
+        "debug:cli": "PWDEBUG=1 npx playwright test tests/demo/debug.make.aptmnt.spec.ts",
+        "debug:ui": "npx playwright test tests/demo/debug.make.aptmnt.spec.ts --ui --headed",
+        "debug": "npx playwright test tests/demo/debug.make.aptmnt.spec.ts --headed",
         "inventory": "npx playwright test tests/functional/inventory.spec.ts --headed",
         "ele-int": "npx playwright test tests/demo/ele.handling.make.aptmnt.spec.ts --headed",
         "make-apt": "npx playwright test tests/functional/make.aptmnt.spec.ts --headed",
