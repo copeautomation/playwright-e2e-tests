@@ -15,7 +15,7 @@ console.log(`Hello from config 👋`);
  */
 export default defineConfig({
     testDir: "./tests",
-    globalTimeout: 10_000,
+    // globalTimeout: 10_000,
     /* Run tests in files in parallel */
     fullyParallel: true,
     /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -55,6 +55,8 @@ export default defineConfig({
         trace: "on-first-retry",
         ignoreHTTPSErrors: true,
         navigationTimeout: 30_000,
+        screenshot: "only-on-failure",
+        // video: "retain-on-failure"
     },
 
     /* Configure projects for major browsers */
