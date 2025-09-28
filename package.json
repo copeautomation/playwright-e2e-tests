@@ -4,6 +4,7 @@
     "description": "Playwright E2E Tests with AI Capabilities incl MCP",
     "main": "index.js",
     "scripts": {
+        "pw-adv-cap": "npx playwright test tests/demo/pw.adv.cap.login.spec.ts --headed",
         "demo:tag": "npx playwright test --grep @smoke --headed",
         "pw-basic-cap": "npx playwright test tests/demo/pw.basic.cap.make.aptmnt.spec.ts --headed",
         "debug:trace": "npx playwright test tests/demo/debug.make.aptmnt.spec.ts --trace on",

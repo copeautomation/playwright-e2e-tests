@@ -2,7 +2,5 @@
 
 ## In this session...
 
-**Video**
-1. Config options -> `use` -> `screenshot`
----
-
+**Advanced Debugging - PW API Level**
+- Set `DEBUG=pw:api` to view the API level logs
