@@ -26,6 +26,7 @@ export default defineConfig({
     workers: process.env.CI ? 1 : undefined,
     expect: { timeout: 10_000 },
     globalSetup: require.resolve('./tests/helpers/global-setup.ts'),
+    globalTeardown: require.resolve('./tests/helpers/global-teardown.ts'),
     /* Reporter to use. See https://playwright.dev/docs/test-reporters */
     reporter: [
         [
