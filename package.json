@@ -4,6 +4,7 @@
     "description": "Playwright E2E Tests with AI Capabilities incl MCP",
     "main": "index.js",
     "scripts": {
+        "demo:global": "npx playwright test tests/functional/login.spec.ts",
         "demo:hooks": "npx playwright test tests/demo/hooks-demo.spec.ts --headed",
         "pw-adv-cap": "DEBUG=pw:api npx playwright test tests/demo/pw.adv.cap.login.spec.ts --headed",
         "demo:tag": "npx playwright test --grep @smoke --headed",
@@ -28,6 +29,7 @@
     "devDependencies": {
         "@playwright/test": "^1.55.0",
         "@types/node": "^24.5.0",
-        "allure-playwright": "^3.4.1"
+        "allure-playwright": "^3.4.1",
+        "dotenv": "^17.2.2"
     }
 }
