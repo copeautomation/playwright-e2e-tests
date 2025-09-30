@@ -1,4 +1,5 @@
-import { test, expect } from "@playwright/test";
+import { test, expect, devices } from "@playwright/test";
+
 
 test("Should load homepage with correct title", async ({ page }) => {
     // 1. Go to the home page
@@ -39,6 +40,10 @@ test("Should demo config file", async ({ page }, testInfo) => {
     console.log(`>> Config at run-time: ${JSON.stringify(testInfo.config)}`);
 });
 
-test.only("Should demo fixtures", async ({ request }, testInfo) => {
+test("Should demo fixtures", async ({ request }, testInfo) => {
     // console.log(`>> The test runs on ${browserName}`);
+});
+
+test.only("Should demo devices", async ({ page }, testInfo) => {
+    console.log(`>> The list of devies: ${Object.keys(devices)}`);
 });

@@ -25,8 +25,8 @@ export default defineConfig({
     /* Opt out of parallel tests on CI. */
     workers: process.env.CI ? 1 : undefined,
     expect: { timeout: 10_000 },
-    globalSetup: require.resolve('./tests/helpers/global-setup.ts'),
-    globalTeardown: require.resolve('./tests/helpers/global-teardown.ts'),
+    globalSetup: require.resolve("./tests/helpers/global-setup.ts"),
+    globalTeardown: require.resolve("./tests/helpers/global-teardown.ts"),
     /* Reporter to use. See https://playwright.dev/docs/test-reporters */
     reporter: [
         [
@@ -77,13 +77,13 @@ export default defineConfig({
         },
 
         // {
-        //   name: 'firefox',
-        //   use: { ...devices['Desktop Firefox'] },
+        //     name: "firefox",
+        //     use: { ...devices["Desktop Firefox"] },
         // },
 
         // {
-        //   name: 'webkit',
-        //   use: { ...devices['Desktop Safari'] },
+        //     name: "webkit",
+        //     use: { ...devices["Desktop Safari"], ignoreHTTPSErrors: true },
         // },
 
         /* Test against mobile viewports. */
