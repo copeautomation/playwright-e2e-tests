@@ -58,7 +58,7 @@ export default defineConfig({
         trace: "on-first-retry",
         ignoreHTTPSErrors: true,
         navigationTimeout: 30_000,
-        screenshot: "only-on-failure",
+        screenshot: "on",
         // video: "retain-on-failure",
         // actionTimeout: 10_000
     },
@@ -68,11 +68,11 @@ export default defineConfig({
         {
             name: "chromium",
             use: {
-                // ...devices["Desktop Chrome"],
-                viewport: null,
-                launchOptions: {
-                    args: ["--start-maximized"],
-                },
+                ...devices["Desktop Chrome"],
+                // viewport: null,
+                // launchOptions: {
+                //     args: ["--start-maximized"],
+                // },
             },
         },
 
@@ -105,6 +105,11 @@ export default defineConfig({
         //   name: 'Google Chrome',
         //   use: { ...devices['Desktop Chrome'], channel: 'chrome' },
         // },
+        {
+            name: "Galaxy A55",
+            use: {...devices["Galaxy A55"]}
+        }
+
     ],
 
     /* Run your local dev server before starting the tests */
