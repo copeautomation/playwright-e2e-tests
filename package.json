@@ -4,6 +4,7 @@
     "description": "Playwright E2E Tests with AI Capabilities incl MCP",
     "main": "index.js",
     "scripts": {
+        "demo:parallel": "npx playwright test --grep @demo",
         "demo:global": "npx playwright test tests/functional/login.spec.ts",
         "demo:hooks": "npx playwright test tests/demo/hooks-demo.spec.ts --headed",
         "pw-adv-cap": "DEBUG=pw:api npx playwright test tests/demo/pw.adv.cap.login.spec.ts --headed",

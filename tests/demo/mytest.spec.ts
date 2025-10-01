@@ -44,6 +44,14 @@ test("Should demo fixtures", async ({ request }, testInfo) => {
     // console.log(`>> The test runs on ${browserName}`);
 });
 
-test.only("Should demo devices", async ({ page }, testInfo) => {
+test("Should demo devices", async ({ page }, testInfo) => {
     console.log(`>> The list of devies: ${Object.keys(devices)}`);
+});
+
+test("Should demo parallel run 1", {tag : '@demo'}, async ({ page }, testInfo) => {
+    await page.goto("https://www.google.com");
+});
+
+test("Should demo parallel run 2", {tag : '@demo'}, async ({ page }, testInfo) => {
+    await page.goto("https://www.google.com");
 });

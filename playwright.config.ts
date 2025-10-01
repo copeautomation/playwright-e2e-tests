@@ -17,7 +17,7 @@ export default defineConfig({
     testDir: "./tests",
     globalTimeout: 3 * 60 * 60 * 1000, // - 3 hours
     /* Run tests in files in parallel */
-    fullyParallel: false,
+    fullyParallel: false, // Default setting 
     /* Fail the build on CI if you accidentally left test.only in the source code. */
     forbidOnly: !!process.env.CI,
     /* Retry on CI only */
@@ -76,10 +76,10 @@ export default defineConfig({
             },
         },
 
-        // {
-        //     name: "firefox",
-        //     use: { ...devices["Desktop Firefox"] },
-        // },
+        {
+            name: "firefox",
+            use: { ...devices["Desktop Firefox"] },
+        },
 
         // {
         //     name: "webkit",
@@ -105,10 +105,10 @@ export default defineConfig({
         //   name: 'Google Chrome',
         //   use: { ...devices['Desktop Chrome'], channel: 'chrome' },
         // },
-        {
-            name: "Galaxy A55",
-            use: {...devices["Galaxy A55"]}
-        }
+        // {
+        //     name: "Galaxy A55",
+        //     use: {...devices["Galaxy A55"]}
+        // }
 
     ],
 
