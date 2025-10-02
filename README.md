@@ -2,21 +2,7 @@
 
 ## In this session...
 
-**Setting up tsconfig.json file**
-1. Create `tsconfig.json` file in the root dir
-2. Have the following content
-
-```ts
-{
-    "compilerOptions": {
-        "target": "ESNext",
-        "module": "CommonJS",
-        "resolveJsonModule": true,
-        "esModuleInterop": true,
-        "strict": false,
-        "noImplicitAny": false
-    },
-    "include": ["tests/**/*.ts", "data/**/*.ts", "playwright.config.ts"],
-    "exclude": ["node_modules", "dist"]
-}
-```
+**Handling Static/Constants Data**
+1. Keep all constants/static data in `constants.json` under the `/data` folder
+2. Start importing the `json` when required
+3. Done !🎉 

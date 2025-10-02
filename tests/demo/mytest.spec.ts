@@ -1,5 +1,5 @@
 import { test, expect, devices } from "@playwright/test";
-
+import constants from "../../data/constants.json"
 
 test("Should load homepage with correct title", async ({ page }) => {
     // 1. Go to the home page
@@ -54,4 +54,8 @@ test("Should demo parallel run 1", {tag : '@demo'}, async ({ page }, testInfo) =
 
 test("Should demo parallel run 2", {tag : '@demo'}, async ({ page }, testInfo) => {
     await page.goto("https://www.google.com");
+});
+
+test.only("Should demo constants data", async ({ page }, testInfo) => {
+    console.log(`>> Constants data: ${JSON.stringify(constants.STATUSCODES)}`);
 });
