@@ -21,6 +21,10 @@ for (const apptData of makeApptTestData) {
             await page.getByLabel("Password").fill("ThisIsNotAPassword");
             await page.getByRole("button", { name: "Login" }).click();
 
+            // Get login cookies
+            const loginCookies = await page.context().cookies()
+            process.env.LOGIN_COOKIES = JSON.stringify(loginCookies)
+
             // Assert a text
             await expect(page.locator("h2")).toContainText("Make Appointment");
         });
@@ -28,6 +32,8 @@ for (const apptData of makeApptTestData) {
         test(`${apptData.testId}: Should make an appointment with non-default values`, async ({ page }, testInfo) => {
             // console.log(`>> Current config \n: ${JSON.stringify(testInfo.config)}`);
 
+            // Access the login cookies
+            console.log(`>> Login cookies: ${process.env.LOGIN_COOKIES}`);
             // Dropdown
             await page.getByLabel("Facility").selectOption(apptData.facility);
 
