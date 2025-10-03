@@ -13,7 +13,7 @@ console.log(`Hello from config 👋`);
 /**
  * See https://playwright.dev/docs/test-configuration.
  */
-export default defineConfig({
+export const baseConfig =  defineConfig({
     testDir: "./tests",
     globalTimeout: 3 * 60 * 60 * 1000, // - 3 hours
     /* Run tests in files in parallel */
