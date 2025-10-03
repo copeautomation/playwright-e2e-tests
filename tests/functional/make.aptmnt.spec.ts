@@ -8,7 +8,6 @@ test.describe("Make Appointment", () => {
         const envConfig = testInfo.project.use as any;
 
         await page.goto(envConfig.appURL);
-        // await page.goto("https://katalon-demo-cura.herokuapp.com/");
         await expect(page).toHaveTitle("CURA Healthcare Service");
         await expect(page.locator("//h1")).toHaveText("CURA Healthcare Service");
 
@@ -17,8 +16,8 @@ test.describe("Make Appointment", () => {
         await expect(page.getByText("Please login to make")).toBeVisible();
 
         // Successful login
-        await page.getByLabel("Username").fill("John Doe");
-        await page.getByLabel("Password").fill("ThisIsNotAPassword");
+        await page.getByLabel("Username").fill(process.env.TEST_USER_NAME);
+        await page.getByLabel("Password").fill(process.env.TEST_PASSWORD);
         await page.getByRole("button", { name: "Login" }).click();
 
         // Assert a text
@@ -28,7 +27,7 @@ test.describe("Make Appointment", () => {
 
     test("Should make an appointment with non-default values", async ({ page }, testInfo) => {
         
-        console.log(`>> Current config \n: ${JSON.stringify(testInfo.config)}`);
+        // console.log(`>> Current config \n: ${JSON.stringify(testInfo.config)}`);
         
         // Dropdown
         await page.getByLabel("Facility").selectOption("Hongkong CURA Healthcare Center");
