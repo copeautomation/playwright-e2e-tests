@@ -1,4 +1,5 @@
 import { test, expect } from "@playwright/test";
+import { log } from "../helpers/logger.js";
 
 test.describe("Make Appointment", () => {
     test.beforeEach("Login with valid creds", async ({ page }, testInfo) => {
@@ -6,6 +7,9 @@ test.describe("Make Appointment", () => {
 
         // Get the URL from config file
         const envConfig = testInfo.project.use as any;
+
+        // Custom logs
+        await log("info", `Launching the web app in ${envConfig.envName}`)
 
         await page.goto(envConfig.appURL);
         await expect(page).toHaveTitle("CURA Healthcare Service");
@@ -22,6 +26,8 @@ test.describe("Make Appointment", () => {
 
         // Assert a text
         await expect(page.locator("h2")).toContainText("Make Appointment");
+        await log("info", "The login is successful...")
+        await log("error", "The next page did not load..")
     });
 
 

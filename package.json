@@ -5,7 +5,7 @@
     "main": "index.js",
     "scripts": {
         "dev:make-apt": "npx playwright test --config=config/dev.playwright.config.ts tests/functional/make.aptmnt.spec.ts --headed",
-        "test:make-apt": "npx playwright test --config=config/test.playwright.config.ts tests/functional/make.aptmnt.spec.ts --headed",
+        "test:make-apt": "npx playwright test --config=config/test.playwright.config.ts tests/functional/make.aptmnt.spec.ts",
         "demo:params": "npx playwright test tests/demo/params.make.aptmnt.spec.ts --headed",
         "demo:parallel": "npx playwright test --grep @demo",
         "demo:global": "npx playwright test tests/functional/login.spec.ts",
@@ -34,6 +34,7 @@
         "@playwright/test": "^1.55.0",
         "@types/node": "^24.5.0",
         "allure-playwright": "^3.4.1",
+        "chalk": "^5.6.2",
         "dotenv": "^17.2.2"
     }
 }

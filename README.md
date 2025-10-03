@@ -2,12 +2,11 @@
 
 ## In this session...
 
-**Handling Sensitive Data**
-1. Check or install if `dotenv` if not, 
-   1. `npm install -D dotenv`
-2. Set the variables in `.env` config file 
-3. Start using them withm `process.env.<varname>`
-4. Done ! 🎉
-
+**Logger Setup**
+1. Install Chalk -> `npm i --save-dev chalk`
+2. Create a file `tests/helpers/logger.ts`
+3. Import the log function and start logging
+4. Run a test and see the logs
+5. Done! 🎉
 
 
