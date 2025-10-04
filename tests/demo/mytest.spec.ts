@@ -1,5 +1,6 @@
 import { test, expect, devices } from "@playwright/test";
-import constants from "../../data/constants.json"
+import constants from "../../data/constants.json";
+import { log } from "../helpers/logger.js";
 
 test("Should load homepage with correct title", async ({ page }) => {
     // 1. Go to the home page
@@ -27,14 +28,13 @@ test("Should demo locators", async ({ page }) => {
     await page.goto("https://katalon-demo-cura.herokuapp.com/");
 
     // 2. Click on the Make Appointment
-    let makeAppmtBtn = page.getByRole("link", { name: "Invalid Locator" })
+    let makeAppmtBtn = page.getByRole("link", { name: "Invalid Locator" });
     // console.log(`>> The type of locator: ${typeof makeAppmtBtn}, The value of the locator is: ${JSON.stringify(makeAppmtBtn)}`);
-    await makeAppmtBtn.click(); 
+    await makeAppmtBtn.click();
     // await expect(page.getByText("Please login to make")).toBeVisible();
 
     // await page.getByRole('heading', { name: 'We Care About Your Health' }).click()
 });
-
 
 test("Should demo config file", async ({ page }, testInfo) => {
     console.log(`>> Config at run-time: ${JSON.stringify(testInfo.config)}`);
@@ -48,14 +48,32 @@ test("Should demo devices", async ({ page }, testInfo) => {
     console.log(`>> The list of devies: ${Object.keys(devices)}`);
 });
 
-test("Should demo parallel run 1", {tag : '@demo'}, async ({ page }, testInfo) => {
+test("Should demo parallel run 1", { tag: "@demo" }, async ({ page }, testInfo) => {
     await page.goto("https://www.google.com");
 });
 
-test("Should demo parallel run 2", {tag : '@demo'}, async ({ page }, testInfo) => {
+test("Should demo parallel run 2", { tag: "@demo" }, async ({ page }, testInfo) => {
     await page.goto("https://www.google.com");
 });
 
-test.only("Should demo constants data", async ({ page }, testInfo) => {
+test("Should demo constants data", async ({ page }, testInfo) => {
     console.log(`>> Constants data: ${JSON.stringify(constants.STATUSCODES)}`);
+});
+
+test.only("Should demo a click action", async ({ page }, testInfo) => {
+    // Default action
+   //  await page.goto("https://katalon-demo-cura.herokuapp.com/");
+    let ele = page.getByRole("link", { name: "Make-Appointment" });
+    // await ele.click();
+
+    // Base page action
+    await page.goto("https://katalon-demo-cura.herokuapp.com/");
+    
+    try {
+        await expect(ele).toBeVisible({ timeout: 10_000 }); // Custom timeout: Default - 5 seconds
+        await ele.click();
+    } catch (error) {
+        await log("error", `Failed to click element: ${ele.toString()}, original error: ${error}`);
+        throw error;
+    }
 });
