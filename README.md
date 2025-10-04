@@ -2,8 +2,7 @@
 
 ## In this session...
 
-**Record Test Execution Flow**
-1. Record the login flow using `https://admin-demo.nopcommerce.com/` app
-2. Add URL assertion 
-3. Run and confirm if it works
-4. Done !
+**Implementing Page Object Model**
+1. Create a new page objects`nopcommerce.home.page.ts` under `/tests/page-objects` folder
+2. Import the `BasePage` to make use already defined actions
+3. Create the page object from the recorded flow
