@@ -2,11 +2,8 @@
 
 ## In this session...
 
-**Logger Setup**
-1. Install Chalk -> `npm i --save-dev chalk`
-2. Create a file `tests/helpers/logger.ts`
-3. Import the log function and start logging
-4. Run a test and see the logs
-5. Done! 🎉
-
-
+**Record Test Execution Flow**
+1. Record the login flow using `https://admin-demo.nopcommerce.com/` app
+2. Add URL assertion 
+3. Run and confirm if it works
+4. Done !
