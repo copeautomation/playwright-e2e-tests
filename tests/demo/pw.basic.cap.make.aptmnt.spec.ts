@@ -1,4 +1,5 @@
 import { test, expect } from "@playwright/test";
+import pwHelper from "../helpers/pw-helper.js";
 
 test.describe("Make Appointment", { annotation: { type: "Story", description: "JIRA-1234: Make Appointment Feature" } }, () => {
     test.beforeEach("Login with valid creds", async ({ page }, testInfo) => {
@@ -18,13 +19,9 @@ test.describe("Make Appointment", { annotation: { type: "Story", description: "J
 
         /**
          * Add custom screenshot at test scope level
-         * @TODO: add this as a helper function
          */
-        let fullPageLoginScreenshot = await page.screenshot({ fullPage: true });
-        await testInfo.attach("login page", {
-            body: fullPageLoginScreenshot,
-            contentType: "image/png",
-        });
+        await pwHelper.takeFullPageScreenshot(page, "login page")
+       
 
         // Assert a text
         await expect(page.locator("h2")).toContainText("Make Appointment");
