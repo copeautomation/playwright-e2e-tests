@@ -1,15 +1,21 @@
 import { test, expect, request } from "@playwright/test";
 import { log } from "../helpers/logger.js";
+import constants from "../../data/constants.json";
+import TestData from "../../data/test-data.js";
 
 test.describe("REST API Demo", () => {
-    const baseURL = "https://reqres.in/api";
+    let envConfig = undefined;
+    test.beforeEach("Get the env config", async ({ request }, testInfo) => {
+        envConfig = testInfo.project.use as any;
+    });
+
     // GET Method
     test("Should get list of users", async ({ request }) => {
         // Make a GET call
-        await log("info", `Making a GET call using ${baseURL}`);
-        const res = await request.get(`${baseURL}/users?page=2`, {
+        await log("info", `Making a GET call using ${envConfig.apiURL}`);
+        const res = await request.get(`${envConfig.apiURL}${constants.REQ_RES_ENDPOINTS.GET_USERS_LIST}`, {
             headers: {
-                "x-api-key": "reqres-free-v1",
+                "x-api-key": process.env.RES_RES_API_KEY,
             },
         });
 
@@ -25,18 +31,12 @@ test.describe("REST API Demo", () => {
     // POST Method
     test("Should create a user", async ({ request }) => {
         // Make a GET call
-        await log("info", `Making a POST call using ${baseURL}`);
+        await log("info", `Making a POST call using ${envConfig.apiURL}`);
+        const payload = TestData.apiUserCreation()[0];
 
-        const payload = {
-            name: "Alex",
-            job: "Thomas",
-            id: "125",
-            createdAt: "2025-10-06T01:35:49.877Z",
-        };
-
-        const res = await request.post(`${baseURL}/users`, {
+        const res = await request.post(`${envConfig.apiURL}${constants.REQ_RES_ENDPOINTS.POST_USER}`, {
             headers: {
-                "x-api-key": "reqres-free-v1",
+                "x-api-key": process.env.RES_RES_API_KEY,
                 "Content-Type": "application/json",
             },
             data: payload,

@@ -24,4 +24,15 @@ export default class TestData {
             { testId: "TC003", facility: "Seoul CURA Healthcare Center", hcp: "None", visitDt: "05/12/2025" },
         ];
     }
+
+    static apiUserCreation() {
+        return [
+            {
+                name: "Alex",
+                job: "Thomas",
+                id: "126",
+                createdAt: "2025-10-06T01:35:49.877Z",
+            }
+        ];
+    }
 }

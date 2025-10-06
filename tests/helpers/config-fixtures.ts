@@ -5,6 +5,7 @@ export type EnvConfig = {
     appURL: string;
     dbConfig: {};
     nopCommerceWeb: string;
+    apiURL: string;
 };
 
 export const test = base.extend<EnvConfig>({
@@ -14,4 +15,5 @@ export const test = base.extend<EnvConfig>({
     appURL: ["<provideURL>", { option: true }],
     dbConfig: [{}, { option: true }],
     nopCommerceWeb: ["provideURL", { option: true }],
+    apiURL: ["<provideURL>", { option: true }],
 });
