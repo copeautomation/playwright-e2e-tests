@@ -4,6 +4,7 @@
     "description": "Playwright E2E Tests with AI Capabilities incl MCP",
     "main": "index.js",
     "scripts": {
+        "test:api": "npx playwright test --config=config/test.playwright.config.ts tests/api/users.api.spec.ts",
         "test:e2e": "npx playwright test --config=config/test.playwright.config.ts tests/e2e/nopcommerce.e2e.spec.ts --headed",
         "dev:make-apt": "npx playwright test --config=config/dev.playwright.config.ts tests/functional/make.aptmnt.spec.ts --headed",
         "test:make-apt": "npx playwright test --config=config/test.playwright.config.ts tests/functional/make.aptmnt.spec.ts",

@@ -2,10 +2,11 @@
 
 ## In this session...
 
-**Creating Tests Using Page Objects**
-1. Create `tests/e2e/nopcommerce.e2e.spec.ts` and put in under `e2e`
-2. Import the `HomePage` and make a login flow
-3. Place the data at appropriate places
-   1. URL -> `config` file
-   2. Creds -> `.env`
+**GET Method - Example**
+1. Create a new spec file `tests/api/users.api.spec.ts`
+2. Make a `GET` call 
+3. Confirm if it works
 4. Done! 🎉
+
+
+
