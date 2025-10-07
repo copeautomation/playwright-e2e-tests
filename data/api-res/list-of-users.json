@@ -6,45 +6,45 @@
     "data": [
         {
             "id": 7,
-            "name": "sand dollar",
-            "year": 2006,
-            "color": "#DECDBE",
-            "pantone_value": "13-1106"
+            "email": "michael.lawson@reqres.in",
+            "first_name": "Michael",
+            "last_name": "Lawson",
+            "avatar": "https://reqres.in/img/faces/7-image.jpg"
         },
         {
             "id": 8,
-            "name": "chili pepper",
-            "year": 2007,
-            "color": "#9B1B30",
-            "pantone_value": "19-1557"
+            "email": "lindsay.ferguson@reqres.in",
+            "first_name": "Lindsay",
+            "last_name": "Ferguson",
+            "avatar": "https://reqres.in/img/faces/8-image.jpg"
         },
         {
             "id": 9,
-            "name": "blue iris",
-            "year": 2008,
-            "color": "#5A5B9F",
-            "pantone_value": "18-3943"
+            "email": "tobias.funke@reqres.in",
+            "first_name": "Tobias",
+            "last_name": "Funke",
+            "avatar": "https://reqres.in/img/faces/9-image.jpg"
         },
         {
             "id": 10,
-            "name": "mimosa",
-            "year": 2009,
-            "color": "#F0C05A",
-            "pantone_value": "14-0848"
+            "email": "byron.fields@reqres.in",
+            "first_name": "Byron",
+            "last_name": "Fields",
+            "avatar": "https://reqres.in/img/faces/10-image.jpg"
         },
         {
             "id": 11,
-            "name": "turquoise",
-            "year": 2010,
-            "color": "#45B5AA",
-            "pantone_value": "15-5519"
+            "email": "george.edwards@reqres.in",
+            "first_name": "George",
+            "last_name": "Edwards",
+            "avatar": "https://reqres.in/img/faces/11-image.jpg"
         },
         {
             "id": 12,
-            "name": "honeysuckle",
-            "year": 2011,
-            "color": "#D94F70",
-            "pantone_value": "18-2120"
+            "email": "rachel.howell@reqres.in",
+            "first_name": "Rachel",
+            "last_name": "Howell",
+            "avatar": "https://reqres.in/img/faces/12-image.jpg"
         }
     ],
     "support": {
@@ -57,12 +57,7 @@
         "docs_url": "https://reqres.in",
         "template_gallery": "https://app.reqres.in/templates",
         "message": "This API is powered by ReqRes. Deploy your own backend in 30 seconds!",
-        "features": [
-            "30 Second Backend Templates",
-            "Custom API Endpoints",
-            "Data Persistence",
-            "Real-time Analytics"
-        ],
+        "features": ["30 Second Backend Templates", "Custom API Endpoints", "Data Persistence", "Real-time Analytics"],
         "upgrade_cta": "Upgrade to Pro for unlimited requests, custom endpoints, and data persistence"
     }
 }
