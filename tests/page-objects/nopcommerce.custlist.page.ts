@@ -26,8 +26,8 @@ export default class CustList extends BasePage {
         this.navigateTo(custListPage);
     }
 
-    async searchAndConfirmUser(firstname: string, lastname: string) {
-        await log("info", `Searching the user with firstname: ${firstname} and lastname: ${lastname}...`)
+    async searchAndConfirmUser(firstname: string, lastname: string): Promise<Boolean> {
+        await log("info", `Searching the user with firstname: ${firstname} and lastname: ${lastname}...`);
         // Search actions
         await this.typeInto(this.firstNameInputBox, firstname);
         await this.typeInto(this.lastNameInputBox, lastname);
