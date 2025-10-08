@@ -2,14 +2,16 @@
 
 ## In this session...
 
-**Playwright MCP Server Setup**
-1. Create `.vscode/mcp.json` in the workspace
-2. This config has two structure
-
-```json
-"servers": {} - Contains the list of MCP servers and their configurations
-"inputs": [] - Optional placeholders for sensitive information like API keys
-```
-3. Add the playwright MCP server config
-4. Done! 🎉
+**Playwright MCP Server - In Action**
+1. Create a new spec file called `multi.window.spec.ts` under my functional folder
+2. And capture the flows as below:
+   - Navigate to the site: `https://the-internet.herokuapp.com/`
+   - Click on "Multiple Windows" link
+   - Navigate to the newly opened window and assert the tile
+   - Click the link on that new window
+   - Navigate to the next window that is opened
+   - Assert the header text
+   - Come back to the parent window
+3. Add a new key in `package.json` file
+4. And run the spec in `headed` mode
 
