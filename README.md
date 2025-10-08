@@ -2,9 +2,14 @@
 
 ## In this session...
 
-**E2E Test - Complete Page Objects**
-1. Capture the customer search flow using codegen for the web app: `https://admin-demo.nopcommerce.com`
-2. Copy the existing `page-objects` and re-use the format
-3. Done !🎉
+**Playwright MCP Server Setup**
+1. Create `.vscode/mcp.json` in the workspace
+2. This config has two structure
 
+```json
+"servers": {} - Contains the list of MCP servers and their configurations
+"inputs": [] - Optional placeholders for sensitive information like API keys
+```
+3. Add the playwright MCP server config
+4. Done! 🎉
 
