@@ -7,7 +7,7 @@
 2. And capture the flows as below:
    - Navigate to the site: `https://the-internet.herokuapp.com/`
    - Click on "Multiple Windows" link
-   - Navigate to the newly opened window and assert the tile
+   - Navigate to the newly opened window and assert the header
    - Click the link on that new window
    - Navigate to the next window that is opened
    - Assert the header text
