@@ -13,3 +13,4 @@ tests-examples/
 example.*
 *.log
 tests/test-*.spec.ts
+.DS_Store
