@@ -28,7 +28,8 @@
     "keywords": [
         "playwright",
         "playwright-e2e-tests",
-        "playwright-mcp"
+        "playwright-mcp",
+        "playwright-api-tests"
     ],
     "author": "Cope Automation",
     "license": "ISC",
