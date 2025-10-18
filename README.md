@@ -16,8 +16,8 @@ env:
     TEST_PASSWORD: ${{ secrets.TEST_PASSWORD }}
 ```
 6. ✅ Update the targets' test key (e.g. `npm run test:make-apt`)
-7. Run and confirm the test
-8. View the basic HTML Report
+7. ✅ Run and confirm the test
+8. ✅ View the basic HTML Report
 9. Done !🎉
 
 **💡 Tips:**

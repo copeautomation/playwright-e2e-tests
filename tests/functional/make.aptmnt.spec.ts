@@ -27,7 +27,6 @@ test.describe("Make Appointment", () => {
         // Assert a text
         await expect(page.locator("h2")).toContainText("Make Appointment");
         await log("info", "The login is successful...")
-        await log("error", "The next page did not load..")
     });
 
 
