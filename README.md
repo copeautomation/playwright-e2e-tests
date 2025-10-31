@@ -1,6 +1,6 @@
 # Instructions and Notes
 
-## In this session...
+## In this session... 
 
 **GitHub Actions**
 1. ✅ Format this file `Alt + Shift + F / Option + Shift + F` 
