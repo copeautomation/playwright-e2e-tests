@@ -7,10 +7,8 @@ pipeline {
   environment {
     // NVM directory for per-user Node.js installation on the agent
     NVM_DIR = "${env.HOME}/.nvm"
-    environment {
     TEST_USER_NAME = credentials('test-user')
     TEST_PASSWORD = credentials('test-pass')
-}
   }
 
   stages {
