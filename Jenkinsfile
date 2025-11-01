@@ -7,6 +7,7 @@ pipeline {
   environment {
     // NVM directory for per-user Node.js installation on the agent
     NVM_DIR = "${env.HOME}/.nvm"
+    CURA_CREDS = credentials('cura-creds')
   }
 
   stages {
