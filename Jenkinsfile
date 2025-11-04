@@ -7,8 +7,9 @@ pipeline {
   environment {
     // NVM directory for per-user Node.js installation on the agent
     NVM_DIR = "${env.HOME}/.nvm"
-    TEST_USER_NAME = credentials('test-user')
-    TEST_PASSWORD = credentials('test-pass')
+    TEST_CREDS = credentials('e2e-test-user')
+    TEST_USER_NAME = "${TEST_CREDS_USR}" // This is Jenkins default behaviour of add _USR and _PWD
+    TEST_PASSWORD = "${TEST_CREDS_PSW}" //
   }
 
   stages {
