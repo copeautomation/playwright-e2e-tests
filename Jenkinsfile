@@ -1,6 +1,6 @@
 pipeline {
   agent any
-  tools { nodejs 'node18' }  // Preconfigured in Manage Jenkins > Global Tool Configuration
+  tools { nodejs 'node24' }  // Preconfigured in Manage Jenkins > Global Tool Configuration
 
   environment {
     TEST_CREDS     = credentials('e2e-test-user')
