@@ -1,99 +1,40 @@
-// Simple Jenkins pipeline for Playwright (no Docker). Runs on any available agent.
-// Assumes a Linux agent with Node.js and npm available. Keep it minimal for teaching.
-
 pipeline {
   agent any
+  tools { nodejs 'node18' }  // Preconfigured in Manage Jenkins > Global Tool Configuration
 
   environment {
-    // NVM directory for per-user Node.js installation on the agent
-    NVM_DIR = "${env.HOME}/.nvm"
-    TEST_CREDS = credentials('e2e-test-user')
-    TEST_USER_NAME = "${TEST_CREDS_USR}" // This is Jenkins default behaviour of add _USR and _PWD
-    TEST_PASSWORD = "${TEST_CREDS_PSW}" //
+    TEST_CREDS     = credentials('e2e-test-user')
+    TEST_USER_NAME = "${TEST_CREDS_USR}"
+    TEST_PASSWORD  = "${TEST_CREDS_PSW}"
+    PLAYWRIGHT_BROWSERS_PATH = "${WORKSPACE}/.cache/ms-playwright"
   }
 
   stages {
-    stage('Checkout') {
-      steps { checkout scm }
-    }
-
-    stage('Setup Node.js (nvm)') {
+    stage('Checkout') { steps { checkout scm } }
+    stage('Install & Test') {
       steps {
-        sh label: 'Install NVM and LTS Node if missing', script: '''
+        sh '''
           set -euxo pipefail
-          export NVM_DIR="$NVM_DIR"
-          if [ ! -s "$NVM_DIR/nvm.sh" ]; then
-            mkdir -p "$NVM_DIR"
-            curl -fsSL https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
-          fi
-          . "$NVM_DIR/nvm.sh"
-          nvm install --lts
-          nvm use --lts
           node -v
           npm -v
-        '''
-      }
-    }
-
-    stage('Install dependencies') {
-      steps {
-        sh label: 'npm ci', script: '''
-          set -euxo pipefail
-          . "$NVM_DIR/nvm.sh"
-          nvm use --lts
           npm ci
-        '''
-      }
-    }
-
-    stage('Install Playwright browsers') {
-      steps {
-        sh label: 'playwright install', script: '''
-          set -euxo pipefail
-          . "$NVM_DIR/nvm.sh"
-          nvm use --lts
-          npx playwright install
-        '''
-      }
-    }
-
-    stage('Run tests') {
-      steps {
-        sh label: 'run tests', script: '''
-          set -euxo pipefail
-          . "$NVM_DIR/nvm.sh"
-          nvm use --lts
+          npx playwright install --with-deps
           npm run test:make-apt
         '''
       }
     }
-
-    stage('Allure report') {
+    stage('Allure (optional)') {
+      when { expression { return fileExists('allure-results') } }
       steps {
-        sh label: 'install allure and generate report', script: '''
-          set -euo pipefail
-          . "$NVM_DIR/nvm.sh"
-          nvm use --lts
-          # Install Allure CLI
-          npm install -g allure-commandline --save-dev
-          # Generate Allure report if results exist
-          if [ -d "allure-results" ] && [ "$(ls -A allure-results)" ]; then
-            allure generate allure-results --clean -o allure-report || true
-          else
-            echo "No allure-results found; skipping allure generate"
-          fi
-        '''
+        sh 'npx --yes allure-commandline@latest generate allure-results --clean -o allure-report || true'
       }
     }
   }
 
   post {
     always {
-      // Save reports as build artifacts (optional but helpful)
-      archiveArtifacts artifacts: 'playwright-report/**/*', allowEmptyArchive: true
-      archiveArtifacts artifacts: 'test-results/**/*', allowEmptyArchive: true
-      archiveArtifacts artifacts: 'allure-results/**/*', allowEmptyArchive: true
-      archiveArtifacts artifacts: 'allure-report/**/*', allowEmptyArchive: true
+      archiveArtifacts artifacts: '**/playwright-report/**,**/test-results/**,**/allure-results/**,**/allure-report/**',
+                       allowEmptyArchive: true
     }
   }
 }
