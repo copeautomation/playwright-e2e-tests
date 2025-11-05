@@ -17,7 +17,13 @@ pipeline {
         '''
       }
       post {
-        always { archiveArtifacts artifacts: '**/playwright-report/**,**/allure-results/**', allowEmptyArchive: true }
+         always {
+      // Publish Allure results (the plugin will build the HTML)
+      allure includeProperties: false,
+             jdk: '',                    // leave blank unless you need a specific JDK
+             results: [[path: 'allure-results']],
+             reportBuildPolicy: 'ALWAYS' // or 'UNSTABLE' / 'FAILED' / etc.
+    }
       }
     }
   }
