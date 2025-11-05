@@ -1,6 +1,9 @@
 pipeline {
   agent any
-  tools { nodejs 'node21' }
+  tools { 
+    nodejs 'node21'
+     allure 'allure'  
+    }
   environment { TEST_CREDS = credentials('e2e-test-user') }
   stages {
     stage('Build') {
