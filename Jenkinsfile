@@ -5,7 +5,7 @@ pipeline {
      allure 'allure'// Jenkins > Global Tool Config: Allure named "allure"
     }
     options {
-    timeout(time: 20, unit: 'MINUTES')
+    timeout(time: 20, unit: 'MINUTES') // To prevent running for long time
   }
   // Binds TEST_CREDS_USR and TEST_CREDS_PSW
   environment { TEST_CREDS = credentials('e2e-test-user') }
