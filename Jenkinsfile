@@ -22,8 +22,8 @@ pipeline {
     stage('Test') {
       steps {
         sh '''
-          TEST_USER_NAME="$TEST_CREDS_USR"
-          TEST_PASSWORD="$TEST_CREDS_PSW"
+          export TEST_USER_NAME="$TEST_CREDS_USR"
+          export TEST_PASSWORD="$TEST_CREDS_PSW"
           npm run test:make-apt
         '''
       }
