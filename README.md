@@ -5,14 +5,14 @@
 ### 1.1.1. Playwright Test Agents - Installation
 
 **Pre-Check**
-1. VS Code version (> `1.105.0 `) -> Update if required
-2. Check playwright version - good to have it latest
+1. ✅ VS Code version (> `1.105.0 `) -> Update if required
+2. ✅ Check playwright version - good to have it latest
    
 ```sh
 npx playwright --version # Returns current version
 npm view playwright version # Returns latest version
 ```
-3. Update playwright (recommended)
+3. ✅ Update playwright (recommended)
 
 ```sh
 npm install -D @playwright/test@latest
