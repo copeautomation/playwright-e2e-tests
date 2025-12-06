@@ -2,30 +2,39 @@
 
 ## 1.1. In this session... 
 
-### 1.1.1. Playwright Test Agents - Installation
+### Safely Updating Playwright Without Breaking Your Project
 
-**Pre-Check**
-1. ✅ VS Code version (> `1.105.0 `) -> Update if required
-2. ✅ Check playwright version - good to have it latest
-   
-```sh
-npx playwright --version # Returns current version
-npm view playwright version # Returns latest version
-```
-3. ✅ Update playwright (recommended)
+**Why?**
+1. To get latest features of playwright
+2. Compatibility with other toolsets like browsers, node.js and performance and security updates
 
+**Approach1: Update Playwright only**
+1. Step1: update the package
 ```sh
+# Check current version
+npx playwright --version
+
+# Get the latest version
+npm show playwright version
+
+# Update to latest pw version
 npm install -D @playwright/test@latest
-npx playwright install
+npx playwright install --with-deps
 ```
+2. Run test and confirm it works
 
-**Installation Steps**
-1. Run `npx playwright init-agents --loop=vscode`
-2. Check the generated files
-3. Done !🎉
+**Approach2: Update Entire node packages**
 
-### 1.1.2. Ref:
-- [Updating Playwright](https://playwright.dev/docs/intro#updating-playwright)
-- [Playwright Agents](https://playwright.dev/docs/test-agents)
-- [Agents md](https://github.com/openai/agents.md?tab=readme-ov-file)
----
+```sh
+# Check latest version of all the node packages
+npm outdated
+
+# Install all the latest packages and save the changes in package.json
+npm update --save
+
+# Check again and confirm 
+npm outdated
+```
+Reference: https://playwright.dev/docs/intro#updating-playwright
+
+Done! 🎉
