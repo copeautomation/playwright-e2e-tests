@@ -1,7 +1,3 @@
-# 1. Instructions and Notes
-
-## 1.1. In this session... 
-
 **Forking an Existing Playwright Repository for Faster Setup**
 __Commands Used__
 
@@ -10,7 +6,7 @@ __Commands Used__
 git clone https://github.com/<your-username>/<forked-repo>.git
 
 # Track upstream
-git remote add upstream https://github.com/raptatinha/tau-introduction-to-playwright.git
+git remote add upstream <upstream-repo-link>
 
 # Check remote
 git remote -v
