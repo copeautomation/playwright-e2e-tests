@@ -1,10 +1,10 @@
 {
-    "STATUSCODES": {
-        "success": 200,
-        "validationError": 707
-    },
-    "REQ_RES_ENDPOINTS" : {
-        "GET_USERS_LIST": "/users?page=2",
-        "POST_USER": "/users"
-    }
+  "STATUSCODES": {
+    "success": 200,
+    "validationError": 707
+  },
+  "REQ_RES_ENDPOINTS": {
+    "GET_USERS_LIST": "/users?page=2",
+    "POST_USER": "/users"
+  }
 }

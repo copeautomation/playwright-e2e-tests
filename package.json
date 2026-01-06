@@ -1,43 +1,43 @@
 {
-    "name": "playwright-e2e-tests",
-    "version": "1.0.0",
-    "description": "Playwright E2E Tests with AI Capabilities incl MCP",
-    "main": "index.js",
-    "scripts": {
-        "test:api": "npx playwright test --config=config/test.playwright.config.ts tests/api/users.api.spec.ts",
-        "test:e2e": "npx playwright test --config=config/test.playwright.config.ts tests/e2e/nopcommerce.e2e.spec.ts --headed",
-        "dev:make-apt": "npx playwright test --config=config/dev.playwright.config.ts tests/functional/make.aptmnt.spec.ts --headed",
-        "test:make-apt": "npx playwright test --config=config/test.playwright.config.ts tests/functional/make.aptmnt.spec.ts",
-        "demo:params": "npx playwright test tests/demo/params.make.aptmnt.spec.ts --headed",
-        "demo:parallel": "npx playwright test --grep @demo",
-        "demo:global": "npx playwright test tests/functional/login.spec.ts",
-        "demo:hooks": "npx playwright test tests/demo/hooks-demo.spec.ts --headed",
-        "pw-adv-cap": "DEBUG=pw:api npx playwright test tests/demo/pw.adv.cap.login.spec.ts --headed",
-        "demo:tag": "npx playwright test --grep @smoke --headed",
-        "pw-basic-cap": "npx playwright test tests/demo/pw.basic.cap.make.aptmnt.spec.ts --headed",
-        "debug:trace": "npx playwright test tests/demo/debug.make.aptmnt.spec.ts --trace on",
-        "debug:cli": "PWDEBUG=1 npx playwright test tests/demo/debug.make.aptmnt.spec.ts",
-        "debug:ui": "npx playwright test tests/demo/debug.make.aptmnt.spec.ts --ui --headed",
-        "debug": "npx playwright test tests/demo/debug.make.aptmnt.spec.ts --headed",
-        "inventory": "npx playwright test tests/functional/inventory.spec.ts --headed",
-        "ele-int": "npx playwright test tests/demo/ele.handling.make.aptmnt.spec.ts --headed",
-        "make-apt": "npx playwright test tests/functional/make.aptmnt.spec.ts --headed",
-        "login": "npx playwright test tests/functional/login.spec.ts --headed",
-        "demo": "npx playwright test tests/demo/mytest.spec.ts --headed"
-    },
-    "keywords": [
-        "playwright",
-        "playwright-e2e-tests",
-        "playwright-mcp",
-        "playwright-api-tests"
-    ],
-    "author": "Cope Automation",
-    "license": "ISC",
-    "devDependencies": {
-        "@playwright/test": "^1.57.0",
-        "@types/node": "^24.10.1",
-        "allure-playwright": "^3.4.1",
-        "chalk": "^5.6.2",
-        "dotenv": "^17.2.3"
-    }
+  "name": "playwright-e2e-tests",
+  "version": "1.0.0",
+  "description": "Playwright E2E Tests with AI Capabilities incl MCP",
+  "main": "index.js",
+  "scripts": {
+    "test:api": "npx playwright test --config=config/test.playwright.config.ts tests/api/users.api.spec.ts",
+    "test:e2e": "npx playwright test --config=config/test.playwright.config.ts tests/e2e/nopcommerce.e2e.spec.ts --headed",
+    "dev:make-apt": "npx playwright test --config=config/dev.playwright.config.ts tests/functional/make.aptmnt.spec.ts --headed",
+    "test:make-apt": "npx playwright test --config=config/test.playwright.config.ts tests/functional/make.aptmnt.spec.ts",
+    "demo:params": "npx playwright test tests/demo/params.make.aptmnt.spec.ts --headed",
+    "demo:parallel": "npx playwright test --grep @demo",
+    "demo:global": "npx playwright test tests/functional/login.spec.ts",
+    "demo:hooks": "npx playwright test tests/demo/hooks-demo.spec.ts --headed",
+    "pw-adv-cap": "DEBUG=pw:api npx playwright test tests/demo/pw.adv.cap.login.spec.ts --headed",
+    "demo:tag": "npx playwright test --grep @smoke --headed",
+    "pw-basic-cap": "npx playwright test tests/demo/pw.basic.cap.make.aptmnt.spec.ts --headed",
+    "debug:trace": "npx playwright test tests/demo/debug.make.aptmnt.spec.ts --trace on",
+    "debug:cli": "PWDEBUG=1 npx playwright test tests/demo/debug.make.aptmnt.spec.ts",
+    "debug:ui": "npx playwright test tests/demo/debug.make.aptmnt.spec.ts --ui --headed",
+    "debug": "npx playwright test tests/demo/debug.make.aptmnt.spec.ts --headed",
+    "inventory": "npx playwright test tests/functional/inventory.spec.ts --headed",
+    "ele-int": "npx playwright test tests/demo/ele.handling.make.aptmnt.spec.ts --headed",
+    "make-apt": "npx playwright test tests/functional/make.aptmnt.spec.ts --headed",
+    "login": "npx playwright test tests/functional/login.spec.ts --headed",
+    "demo": "npx playwright test tests/demo/mytest.spec.ts --headed"
+  },
+  "keywords": [
+    "playwright",
+    "playwright-e2e-tests",
+    "playwright-mcp",
+    "playwright-api-tests"
+  ],
+  "author": "Cope Automation",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.57.0",
+    "@types/node": "^24.10.1",
+    "allure-playwright": "^3.4.1",
+    "chalk": "^5.6.2",
+    "dotenv": "^17.2.3"
+  }
 }
